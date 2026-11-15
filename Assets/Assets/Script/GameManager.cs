@@ -22,11 +22,39 @@ public class GameManager : MonoBehaviour
     public GameObject GamePanel;
     public GameObject PausePanel;
 
+    public SpriteRenderer playerskin;
+    public GameObject skinselect;
+    public GameObject credit;
+    public GameObject store;
+
     private void Awake()
     {
         Instance = this;
     }
 
+    public void openskin()
+    {
+        skinselect.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+    public void openstore()
+    {
+        store.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+    public void opencredit()
+    {
+        credit.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+    public void backtomenu()
+    {
+        MainMenuPanel.SetActive(true);
+
+        skinselect.SetActive(false);
+        store.SetActive(false);
+        credit.SetActive(false);
+    }
     public void resetScene()
     {
         Time.timeScale = 1f;
