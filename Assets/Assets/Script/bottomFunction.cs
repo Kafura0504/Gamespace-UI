@@ -12,4 +12,5 @@ public void closeBottomBar()
     {
         seconbar.SetActive(true);
     }
+
 }
