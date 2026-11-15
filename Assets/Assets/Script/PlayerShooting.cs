@@ -20,6 +20,9 @@ public class PlayerShooting : MonoBehaviour {
     [Tooltip("projectile prefab")]
     public GameObject projectileObject;
 
+    [Tooltip("Sound Effect")]
+    public GameObject sfx;
+
     //time for a new shot
     [HideInInspector] public float nextFire;
 
@@ -90,6 +93,7 @@ public class PlayerShooting : MonoBehaviour {
                 guns.rightGunVFX.Play();
                 break;
         }
+        Instantiate(sfx,transform.position, transform.rotation);
     }
 
     void CreateLazerShot(GameObject lazer, Vector3 pos, Vector3 rot) 
